@@ -23,7 +23,8 @@ public class InitConnection extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		
+		// add navigation
+		request.getRequestDispatcher("index.html").include(request, response);
 		try {
 			String url = "jdbc:mysql://localhost:3306/ecom_webapp";
 			String username = "root";
